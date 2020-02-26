@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <script>
+      //Set the scene
+    let userInput = ' ';
+    let playerSelection = ' ';
+    let compSelection = ' ';
+    
+    function playerSelect() {
+        userInput = window.prompt("Please make your selection rock, paper or scissors");
+        playerSelection = userInput.toLowerCase();
+        return playerSelection
+    }
+
+    function compPlay() { 
+        let rando = Math.floor((Math.random()*3));
+        //console.log(rando);
+        switch (rando) {
+            case 0: 
+                compSelection = 'rock';
+                return compSelection
+                break;
+            case 1: 
+                compSelection = 'paper';
+                return compSelection
+                break;
+            case 2: 
+                compSelection = 'scissors';
+                return compSelection
+                break;
+            }
+        };
+
+    function playRound(playerSelection, compSelection) {
+        var roundresult
+
+        if (playerSelection == 'rock') {
+            switch (compSelection) {
+                case 'rock':
+                    roundresult = 0;
+                    break;
+                case 'paper':
+                    roundresult = -1;
+                    break;
+                case 'scissors':
+                    roundresult = 1;
+                    break;
+            }
+        } else if (playerSelection == 'paper') {
+            switch (compSelection) {
+                case 'rock':
+                    roundresult = 1;
+                    break;
+                case 'paper':
+                    roundresult = 0;
+                    break;
+                case 'scissors':
+                    roundresult = -1;
+                    break;
+            }
+        } else if (playerSelection == 'scissors') {
+            switch (compSelection) {
+                case 'rock':
+                    roundresult = -1;
+                    break;
+                case 'paper':
+                    roundresult = 1;
+                    break;
+                case 'scissors':
+                    roundresult = 0;
+                    break;
+            }
+        } else {
+            console.log("Error! Please type rock, paper, or scissors")
+            roundresult = 'error'
+        }
+
+        return roundresult
+
+    }
+
+    function game() {
+        console.log('');
+        console.log('Round 1');
+        console.log('--------------');
+        playerSelect();
+        console.log(playerSelection);
+        compPlay();
+        console.log(compSelection);
+        if (playRound(playerSelection, compSelection) == 1) {
+            console.log(`The computer selected ${compSelection} You Won!`)
+        }else if (playRound(playerSelection, compSelection) == 0) {
+            console.log(`The computer selected ${compSelection} You Tied!`)
+        }else {
+            console.log(`The computer selected ${compSelection} You Lost!`)
+        }
+
+
+        console.log('');
+        console.log('Round 2');
+        console.log('--------------')
+        playerSelect();
+        console.log(playerSelection);
+        compPlay();
+        console.log(compSelection);
+        if (playRound(playerSelection, compSelection) == 1) {
+            console.log(`The computer selected ${compSelection} You Won!`)
+        }else if (playRound(playerSelection, compSelection) == 0) {
+            console.log(`The computer selected ${compSelection} You Tied!`)
+        }else {
+            console.log(`The computer selected ${compSelection} You Lost!`)
+        }
+
+
+        console.log('');
+        console.log('Round 3');
+        console.log('--------------');
+        playerSelect();
+        console.log(playerSelection);
+        compPlay();
+        console.log(compSelection);
+        if (playRound(playerSelection, compSelection) == 1) {
+            console.log(`The computer selected ${compSelection} You Won!`)
+        }else if (playRound(playerSelection, compSelection) == 0) {
+            console.log(`The computer selected ${compSelection} You Tied!`)
+        }else {
+            console.log(`The computer selected ${compSelection} You Lost!`)
+        }
+
+
+        console.log('');
+        console.log('Round 4');
+        console.log('--------------');
+        playerSelect();
+        console.log(playerSelection);
+        compPlay();
+        console.log(compSelection);
+        if (playRound(playerSelection, compSelection) == 1) {
+            console.log(`The computer selected ${compSelection} You Won!`)
+        }else if (playRound(playerSelection, compSelection) == 0) {
+            console.log(`The computer selected ${compSelection} You Tied!`)
+        }else {
+            console.log(`The computer selected ${compSelection} You Lost!`)
+        }
+
+
+        console.log('');
+        console.log('Round 5');
+        console.log('--------------');
+        playerSelect();
+        console.log(playerSelection);
+        compPlay();
+        console.log(compSelection);
+        if (playRound(playerSelection, compSelection) == 1) {
+            console.log(`The computer selected ${compSelection} You Won!`)
+        }else if (playRound(playerSelection, compSelection) == 0) {
+            console.log(`The computer selected ${compSelection} You Tied!`)
+        }else {
+            console.log(`The computer selected ${compSelection} You Lost!`)
+        }
+    }
+
+console.log(game())
+
+  </script>
+</body>
+</html>
